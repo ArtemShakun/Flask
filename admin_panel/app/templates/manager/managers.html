@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Managers
+{% endblock %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+<table class="table mt-3 col-lg-9 col-md-9 col-sm-12">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Position</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Store</th>
+
+    </tr>
+
+  </thead>
+  <tbody>
+    {% for user in u %}
+      <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.position }}</td>
+        <td>{{ user.phone }}</td>
+        {% for store in s %}
+            {% if user.store_id == store.id_store %}
+              <td>{{ store.name }}</td>
+            {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+</div>
+{% endblock %}

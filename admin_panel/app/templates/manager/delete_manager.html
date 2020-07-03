@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Delete managers
+{% endblock %}
+
+{% block content %}
+<div class="col-md-4 ml-4">
+  <h1 class= 'mt-3'>Search Manager</h1>
+    <div class = 'mt-4'>
+
+        <form class="form-inline my-2 my-lg-0" action="{{ url_for('managers.delete_manager') }}" method="GET">
+            <div class="form-group">
+              <input class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search" name="q" value="{{ request.args.get('q', '') }}">
+            </div>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+
+     </div>
+        <form method="POST" class = 'mt-5'>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Manager id</label>
+            <input type="text" name='id' class="form-control" id="formGroupExampleInput2" value="{{ m.id_manager }}">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Name</label>
+            <input type="text" name='name'class="form-control" id="formGroupExampleInput2" value="{{ m.name }}">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Email</label>
+            <input type="text" name='email'class="form-control" id="formGroupExampleInput2" value="{{ m.email }}">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Positio</label>
+            <input type="text" name='position' class="form-control" id="formGroupExampleInput2" value="{{ m.position }}">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Phone</label>
+            <input type="text" name='phone' class="form-control" id="formGroupExampleInput2" value="{{ m.phone }}">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Store</label>
+            <input type="text" name='store' class="form-control" id="formGroupExampleInput2" value="{{ m.store_id }}">
+          </div>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+{% endblock %}

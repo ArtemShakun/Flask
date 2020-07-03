@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Stores
+{% endblock %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+<table class="table mt-3 col-lg-9 col-md-9 col-sm-12">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">city</th>
+      <th scope="col">address</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    {% for store in s %}
+      <tr>
+        
+        <td>{{ store.name }}</td>
+        <td>{{ store.city }}</td>
+        <td>{{ store.address }}</td>
+
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+</div>
+{% endblock %}

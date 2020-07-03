@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Goods
+{% endblock %}
+
+
+{% block content %}
+<div class="row justify-content-center">
+<table class="table mt-3 col-lg-9 col-md-9 col-sm-12">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Brand</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    {% for goods in g %}
+      <tr>
+        
+        <td>{{ goods.brand }}</td>
+        <td>{{ goods.name }}</td>
+        <td>{{ goods.price }}</td>
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+</div>
+{% endblock %}
